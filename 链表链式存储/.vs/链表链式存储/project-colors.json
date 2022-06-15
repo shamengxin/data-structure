@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fbfcfd8b-5882-4d6f-ad29-bc0be6edf272": {
+      "ProjectGuid": "fbfcfd8b-5882-4d6f-ad29-bc0be6edf272",
+      "DisplayName": "链表链式存储",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
