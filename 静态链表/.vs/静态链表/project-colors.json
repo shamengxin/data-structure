@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "93a182c6-0a6c-414c-a0c9-4d89d58365f9": {
+      "ProjectGuid": "93a182c6-0a6c-414c-a0c9-4d89d58365f9",
+      "DisplayName": "静态链表",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
