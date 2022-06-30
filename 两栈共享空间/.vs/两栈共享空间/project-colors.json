@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9c783001-14e2-4d54-bc40-7d2278b90901": {
+      "ProjectGuid": "9c783001-14e2-4d54-bc40-7d2278b90901",
+      "DisplayName": "两栈共享空间",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
