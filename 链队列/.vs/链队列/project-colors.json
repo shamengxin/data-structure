@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "46b4686e-bc9a-4f57-ae49-5a6d0d6cbd43": {
+      "ProjectGuid": "46b4686e-bc9a-4f57-ae49-5a6d0d6cbd43",
+      "DisplayName": "链队列",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
