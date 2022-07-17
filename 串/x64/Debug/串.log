@@ -1,0 +1,3 @@
+﻿  String2.c
+D:\编程\串\String2.c(14,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  串.vcxproj -> D:\编程\串\x64\Debug\串.exe
