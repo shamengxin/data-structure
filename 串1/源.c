@@ -11,14 +11,14 @@
 #define GT 1
 
 typedef int Status;
-//¶¨Òå´®½á¹¹
+//å®šä¹‰ä¸²ç»“æ„
 typedef struct
 {
 	char ch[MAXSIZE + 1];
 	int length;
 }SString;
 
-//¶Ô´®T½øĞĞ¸³Öµ
+//å¯¹ä¸²Tè¿›è¡Œèµ‹å€¼
 Status StrAssign(SString* T, char* chars)
 {
 	int i;
@@ -36,7 +36,7 @@ Status StrAssign(SString* T, char* chars)
 }
 
 
-//¶Ô´®S½øĞĞ¿½±´
+//å¯¹ä¸²Sè¿›è¡Œæ‹·è´
 Status StrCopy(SString* T, SString S)
 {
 	int i;
@@ -46,7 +46,7 @@ Status StrCopy(SString* T, SString S)
 	return OK;
 }
 
-//¼ì²â´®ÊÇ·ñÎª¿Õ
+//æ£€æµ‹ä¸²æ˜¯å¦ä¸ºç©º
 Status StrEmpty(SString S)
 {
 	if (S.length == 0)
@@ -55,7 +55,7 @@ Status StrEmpty(SString S)
 		return FALSE;
 }
 
-//±È½Ï´®SºÍ´®TµÄ´óĞ¡
+//æ¯”è¾ƒä¸²Så’Œä¸²Tçš„å¤§å°
 Status StrCompare(SString T, SString S)
 {
 	int i;
@@ -77,13 +77,13 @@ Status StrCompare(SString T, SString S)
 		return EQ;
 }
 
-//Çó´®³¤
+//æ±‚ä¸²é•¿
 int StrLenght(SString S)
 {
 	return S.length;
 }
 
-//Á¬½Ó´®s1ºÍs2£¬²¢ÓÃ´®T·µ»Ø
+//è¿æ¥ä¸²s1å’Œs2ï¼Œå¹¶ç”¨ä¸²Tè¿”å›
 Status Concat(SString* T, SString s1, SString s2)
 {
 	if (s1.length + s2.length <= MAXSIZE)
@@ -114,14 +114,14 @@ Status Concat(SString* T, SString s1, SString s2)
 	}
 }
 
-//Çå¿Õ´®
+//æ¸…ç©ºä¸²
 Status ClearString(SString* S)
 {
 	S->length = 0;
 	return OK;
 }
 
-//ÓÃ´®Sub·µ»Ø´®SµÄµÚpos¸ö×Ö·ûÆğ³¤¶ÈÎªlenµÄ×Ó´®
+//ç”¨ä¸²Subè¿”å›ä¸²Sçš„ç¬¬posä¸ªå­—ç¬¦èµ·é•¿åº¦ä¸ºlençš„å­ä¸²
 Status SubString(SString* Sub, SString S, int pos, int len)
 {
 	if (pos<1 || pos>S.length || len<0 || pos + len>S.length)
@@ -133,7 +133,7 @@ Status SubString(SString* Sub, SString S, int pos, int len)
 	Sub->length = len;
 	return OK;
 }
-//É¾³ı´®SµÄµÚpos¸ö×Ö·ûÆğ³¤¶ÈÎªlenµÄ×Ó´®
+//åˆ é™¤ä¸²Sçš„ç¬¬posä¸ªå­—ç¬¦èµ·é•¿åº¦ä¸ºlençš„å­ä¸²
 Status StrDelete(SString* S, int pos, int len)
 {
 	if (pos<1 || pos>S->length || len<0 || pos + len>S->length)
@@ -146,7 +146,7 @@ Status StrDelete(SString* S, int pos, int len)
 	return OK;
 }
 
-//ÔÚ´®SµÄµÚpos¸ö×Ö·ûÇ°²åÈë´®T
+//åœ¨ä¸²Sçš„ç¬¬posä¸ªå­—ç¬¦å‰æ’å…¥ä¸²T
 Status StrInsert(SString* S, int pos, SString T)
 {
 	if (pos<1 || pos>S->length)
@@ -180,12 +180,12 @@ Status StrInsert(SString* S, int pos, SString T)
 	}
 }
 
-//·µ»Ø×Ó´®TÔÚÖ÷´®SÖĞµÄpos¸ö×Ö·ûÖ®ºóµÄÎ»ÖÃ£¬Èô²»´æÔÚ·µ»Ø0
+//è¿”å›å­ä¸²Tåœ¨ä¸»ä¸²Sä¸­çš„posä¸ªå­—ç¬¦ä¹‹åçš„ä½ç½®ï¼Œè‹¥ä¸å­˜åœ¨è¿”å›0
 int Index(SString S, SString T, int pos)
 {
 	int i = pos - 1;
 	int j = 0;
-	while (i < S.length && i < T.length)
+	while (i < S.length && j < T.length)
 	{
 		if (S.ch[i] == T.ch[j])
 		{
@@ -204,7 +204,7 @@ int Index(SString S, SString T, int pos)
 		return 0;
 }
 
-//ÓÃVÌæ»»Ö÷´®SÖĞ³öÏÖµÄËùÓĞÓÚTÏàµÈµÄ²»ÖØµşµÄ×Ó´®
+//ç”¨Væ›¿æ¢ä¸»ä¸²Sä¸­å‡ºç°çš„æ‰€æœ‰äºTç›¸ç­‰çš„ä¸é‡å çš„å­ä¸²
 Status Replace(SString* S, SString T, SString V)
 {
 	int i = 0;
@@ -223,7 +223,7 @@ Status Replace(SString* S, SString T, SString V)
 	return OK;
 }
 
-//¶Ô´®½øĞĞ´òÓ¡
+//å¯¹ä¸²è¿›è¡Œæ‰“å°
 void StrPrint(SString T)
 {
 	int i;
@@ -240,66 +240,66 @@ int main()
 	Status k;
 	SString s1,s2,t;
 	int i, j;
-	printf("ÇëÊäÈë´®s1:");
+	printf("è¯·è¾“å…¥ä¸²s1:");
 	k = StrAssign(&s1, "abcd");
 	if (!k)
 	{
-		printf("´®³¤³¬¹ıMAXSIZE(=%d)\n", MAXSIZE);
+		printf("ä¸²é•¿è¶…è¿‡MAXSIZE(=%d)\n", MAXSIZE);
 		exit(0);
 	}
 	StrPrint(s1);
-	printf("´®³¤Îª%d£¬´®¿Õ·ñ£¿%d(1:ÊÇ 0:·ñ£©\n", StrLenght(s1), StrEmpty(s1));
+	printf("ä¸²é•¿ä¸º%dï¼Œä¸²ç©ºå¦ï¼Ÿ%d(1:æ˜¯ 0:å¦ï¼‰\n", StrLenght(s1), StrEmpty(s1));
 	StrCopy(&s2, s1);
-	printf("¿½±´s1Éú³ÉµÄ´®Îª£º");
+	printf("æ‹·è´s1ç”Ÿæˆçš„ä¸²ä¸ºï¼š");
 	StrPrint(s2);
 	k = StrAssign(&s2, "efghijk");
 	if (!k)
 	{
-		printf("´®³¤³¬¹ıMAXSIZE(=%d)\n", MAXSIZE);
+		printf("ä¸²é•¿è¶…è¿‡MAXSIZE(=%d)\n", MAXSIZE);
 		exit(0);
 	}
 	k = StrCompare(s1, s2);
-	printf("´®1ºÍ´®2µÄ±È½Ï½á¹ûÎª£º%d(-1:Ğ¡ÓÚ,0:µÈÓÚ,1:´óÓÚ)\n", k);
+	printf("ä¸²1å’Œä¸²2çš„æ¯”è¾ƒç»“æœä¸ºï¼š%d(-1:å°äº,0:ç­‰äº,1:å¤§äº)\n", k);
 	k = Concat(&t, s1, s2);
-	printf("´®s1Á¬½Ó´®s2µÃµ½µÄ´®tÎª£º");
+	printf("ä¸²s1è¿æ¥ä¸²s2å¾—åˆ°çš„ä¸²tä¸ºï¼š");
 	StrPrint(t);
 	if (k == FALSE)
-		printf("´®tÓĞ½Ø¶Ï/n");
+		printf("ä¸²tæœ‰æˆªæ–­/n");
 	ClearString(&s1);
-	printf("ÇåÎª¿Õ´®ºó£¬´®s1Îª£º");
+	printf("æ¸…ä¸ºç©ºä¸²åï¼Œä¸²s1ä¸ºï¼š");
 	StrPrint(s1);
-	printf("´®³¤Îª%d£¬´®¿Õ·ñ£¿%d(1:ÊÇ 0:·ñ£©\n", StrLenght(s1), StrEmpty(s1));
-	printf("Çó´®tµÄ×Ö´®£¬ÇëÊäÈë×Ö´®µÄÆğÊ¼Î»ÖÃ£¬×Ö´®µÄ³¤¶È£º");
+	printf("ä¸²é•¿ä¸º%dï¼Œä¸²ç©ºå¦ï¼Ÿ%d(1:æ˜¯ 0:å¦ï¼‰\n", StrLenght(s1), StrEmpty(s1));
+	printf("æ±‚ä¸²tçš„å­—ä¸²ï¼Œè¯·è¾“å…¥å­—ä¸²çš„èµ·å§‹ä½ç½®ï¼Œå­—ä¸²çš„é•¿åº¦ï¼š");
 	i = 2;
 	j = 3;
 	printf("%d,%d\n", i, j);
 	k = SubString(&s2, t, i, j);
 	if (k)
 	{
-		printf("×Ö´®s2Îª£º");
+		printf("å­—ä¸²s2ä¸ºï¼š");
 		StrPrint(s2);
 	}
-	printf("´Ó´®tµÄµÚpos¸ö×Ö·ûÆğ£¬É¾³ılen¸ö×Ö·û£¬ÇëÊäÈëpos£¬len£º");
+	printf("ä»ä¸²tçš„ç¬¬posä¸ªå­—ç¬¦èµ·ï¼Œåˆ é™¤lenä¸ªå­—ç¬¦ï¼Œè¯·è¾“å…¥posï¼Œlenï¼š");
 	i = 4;
 	j = 2;
 	printf("%d,%d\n", i, j);
 	StrDelete(&t, i, j);
-	printf("É¾³ıºóµÄ´®tÎª£º");
+	printf("åˆ é™¤åçš„ä¸²tä¸ºï¼š");
 	StrPrint(t);
 	i = StrLenght(s2) / 2;
 	StrInsert(&s2, i, t);
-	printf("ÔÚ´®s2µÄµÚ%d¸ö×Ö·ûÖ®Ç°²åÈë´®tºó£¬´®s2Îª:", i);
+	printf("åœ¨ä¸²s2çš„ç¬¬%dä¸ªå­—ç¬¦ä¹‹å‰æ’å…¥ä¸²tåï¼Œä¸²s2ä¸º:", i);
 	StrPrint(s2);
 	i = Index(s2, t, 1);
-	printf("s2µÄµÚ%d¸ö×ÖÄ¸ÆğºÍtµÚÒ»´ÎÆ¥Åä\n", i);
+	printf("s2çš„ç¬¬%dä¸ªå­—æ¯èµ·å’Œtç¬¬ä¸€æ¬¡åŒ¹é…\n", i);
 	SubString(&t, s2, 1, 1);
-	printf("´®tÎª£º");
+	printf("ä¸²tä¸ºï¼š");
 	StrPrint(t);
 	Concat(&s1, t, t);
-	printf("´®s1Îª£º");
+	printf("ä¸²s1ä¸ºï¼š");
 	StrPrint(s1);
 	Replace(&s2, t, s1);
-	printf("ÓÃ´®s1È¡´ú´®s2ÖĞºÍ´®tÏàÍ¬µÄ²»ÖØµşµÄ´®ºó£¬´®s2Îª£º");
+	printf("ç”¨ä¸²s1å–ä»£ä¸²s2ä¸­å’Œä¸²tç›¸åŒçš„ä¸é‡å çš„ä¸²åï¼Œä¸²s2ä¸ºï¼š");
 	StrPrint(s2);
 	return 0;
 }
