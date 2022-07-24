@@ -14,7 +14,7 @@ typedef int Status;
 //定义串结构
 typedef struct
 {
-	char ch[MAXSIZE + 1];
+	char ch[MAXSIZE];
 	int length;
 }SString;
 
