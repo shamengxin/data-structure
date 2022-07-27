@@ -185,7 +185,7 @@ int Index(SString S, SString T, int pos)
 {
 	int i = pos - 1;
 	int j = 0;
-	while (i < S.length && i < T.length)
+	while (i < S.length && j < T.length)
 	{
 		if (S.ch[i] == T.ch[j])
 		{
